@@ -1,0 +1,75 @@
+[project]
+name = "rag-3w-cot"
+version = "0.1.0-dev"
+description = "A 3-way FAISS MMR Search & Stepped Chain Of Thought RAG"
+authors = [
+    {name = "Pedro Ananias", email = "phmananias@gmail.com"}
+]
+requires-python = ">=3.9,<3.13"
+readme = "README.md"
+license = "LICENSE.md"
+
+[tool.poetry]
+packages = [
+    { include = "rag_3w_cot", from = "src", format = ["sdist", "wheel"] }
+]
+include = [
+    { path = "rag_3w_cot/prompts/*.md", format = ["sdist", "wheel"] }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+accelerate = "^1.4.0"
+bert-score = "^0.3.13"
+bitsandbytes = "^0.45.3"
+evaluate = "^0.4.3"
+faiss-gpu-cu12 = "^1.10.0"
+huggingface-hub = "^0.29.1"
+Jinja2 = "^3.1.5"
+langchain = "^0.3.19"
+langchain-openai = "^0.3.7"
+langchain-community = "^0.3.18"
+langchain-huggingface = "^0.1.2"
+llama-index = "^0.12.19"
+llama-index-embeddings-langchain = "^0.3.0"
+llama-index-retrievers-bm25 = "^0.5.2"
+llama-index-vector-stores-faiss = "^0.3.0"
+loguru = "^0.7.3"
+markdownify = "^1.0.0"
+nltk = "^3.9.1"
+numpy = "^1.26.4"
+openai = "^1.64.0"
+pandas = "2.2.2"
+pydantic = "^2.10.6"
+pydantic-settings = "^2.8.0"
+rank_bm25 = "^0.2.2"
+rouge_score = "^0.1.2"
+scikit-learn = "^1.6.1"
+sentence-transformers = "^3.4.1"
+spacy = "^3.7.2"
+tiktoken = "^0.9.0"
+torch = "2.6.0+cu126"
+transformers = "^4.49.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.7"
+pyright = "^1.1.394"
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu126"
+priority = "supplemental"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+include = ["src/**/*.py", "**/pyproject.toml"] # "**/*.md"
+lint.ignore = ["E501"]
+lint.extend-select = ["I"]
+line-length = 88
+indent-width = 4
+
+[tool.pyright]
+include = ["src"]

@@ -1,0 +1,30 @@
+[
+    {
+        "question_text": "Did Downer EDI Limited announce a share buyback plan in the annual report? If there is no mention, return False.",
+        "kind": "boolean",
+        "value": true,
+        "references": [
+            {
+                "pdf_sha1": "0a61a353b1ea9fd9b8f63b60239634ca3007d58f",
+                "page_index": 101
+            }
+        ]
+    },
+    {
+        "question_text": "For Rectifier Technologies Ltd, what was the value of Number of patents at year-end at the end of the period listed in annual report? If data is not available, return 'N/A'.",
+        "kind": "number",
+        "value": "N/A",
+        "references": []
+    },
+    {
+        "question_text": "Which leadership positions changed at Duni Group in the reporting period? If data is not available, return 'N/A'. Give me the title of the position.",
+        "kind": "names",
+        "value": "Executive Vice President Commercial",
+        "references": [
+            {
+                "pdf_sha1": "e7a45fed0d7ebfd13a524e7fcc443318bac654e2",
+                "page_index": 83
+            }
+        ]
+    }
+]
